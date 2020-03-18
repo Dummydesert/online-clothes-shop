@@ -1,0 +1,7 @@
+{
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_flask_sqlalcheny"
+    ],
+    "python.pythonPath": "C:\\Python37\\python.exe"
+}

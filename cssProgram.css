@@ -1,0 +1,42 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+  color: lime;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: left;
+  padding: 16px;
+  text-decoration: none;
+  background-color: lime;
+}
+
+li a:hover {
+  background-color: #111111;
+
+}
+body {
+
+background-color: black;
+color:lime;
+}
+input {
+
+background-color: black;
+color: lime;
+
+}
+button {
+
+color: lime;
+background-color: black;
+}
