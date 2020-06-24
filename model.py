@@ -50,3 +50,16 @@ class Product(db.Model):
 		#return "({}, {}, {}, {})".format(self.rowid, self.name, self.login, self.password)
 ###############################################################################################
 ###############################################################################################
+class Money(db.Model):
+    revenue     = db.Column(db.Integer, nullable=False)
+    spenditure  = db.Column(db.Integer, nullable=False)
+
+class EmployeeAccounts(db.Model):
+    rowid       = db.Column(db.Integer, nullable=False, primary_key=True)
+    name        = db.Column(db.String(80), nullable=False)
+    email       = db.Column(db.String(80), unique=True, nullable=False)
+    password    = db.Column(db.String(80), nullable=False)
+    created     = db.Column(db.DateTime, nullable=False)
+    updated     = db.Column(db.DateTime, nullable=False)
+    phonenumber = db.Column(db.String(80), unique=True, nullable=False)
+    address     = db.Column(db.String(80), unique=True, nullable=False)

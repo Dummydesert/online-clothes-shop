@@ -18,6 +18,10 @@ class LoginForm(FlaskForm):
     password = PasswordField("Senha", validators=[DataRequired()])
     submit   = SubmitField("Acessar")
 
+    def validate_username(self, field):
+        if User.query.filter_by(name=field.data).first():
+            raise ValidationError("Nome de usuário já está em uso.")
+
 class ConfirmUser(FlaskForm):
     full_name = StringField("Nome completo", validators=[DataRequired(), Length(1, 64)])
     email     = StringField("Email", validators=[DataRequired(), Length(1, 64), Email()])

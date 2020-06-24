@@ -1,25 +1,12 @@
 {% extends "base.html" %}
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="cssProgram.css">
-</head>
-<body>
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Login - Acessar{% endblock %}
 
-<h1>Smart Clothes</h1>
-
-
-
-<ul>
-  <li><a href="">Home</a></li>
-  <li><a href="AboutUs.html">About our Business</a></li>
-  <li><a href="OurValues.html">Our Values</a></li>
-  <li><a href="contact.html">Contacts</a></li>
-  <li><a href="Client.html">Client</a></li>
-  <li><a href="Login.html">Login</a></li>
-</ul>
-<label>Name:</label><input type="text" name="name"><br>
-<label>Mail:</label><input type="text" name="mail"><br>
-<label>Phone Number:</label><input type="text" name="phoneNumber"><br>
-</body>
-</html>
+{% block page_content %}
+<div class="page-header">
+    <h1>Acessar</h1><br>
+</div>
+<div class="col-md-4">
+    {{ wtf.quick_form(form) }} 
+</div>
+{% endblock %}
