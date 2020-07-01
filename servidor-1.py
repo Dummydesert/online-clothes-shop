@@ -1,11 +1,21 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+from dbinsert import create_new_account
+from forms import CreateUser
 app=Flask(__name__)
 Bootstrap(app)
+
 
 @app.route("/")
 def home():
     return render_template("new 6.html") 
+
+@app.route('/new_account', methods=['GET', 'POST'])
+def new_account():
+    form = CreateUser()
+    if form.validate_on_submit():
+        create_new_account(form.name.data, form.password.data) 
+    return render_template('createUser.html', form=form)
 
 @app.route("/contact")
 def contact():
@@ -66,3 +76,4 @@ def Client():
     return render_template("CreateUser.html") 
 
 app.run(debug=True)
+
